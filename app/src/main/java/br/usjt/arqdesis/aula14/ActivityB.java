@@ -1,18 +1,15 @@
 package br.usjt.arqdesis.aula14;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import br.usjt.arqdesis.aula14.util.StatusTracker;
 import br.usjt.arqdesis.aula14.util.Utils;
 
-public class ActivityA extends AppCompatActivity {
+public class ActivityB extends AppCompatActivity {
 
     private String mActivityName;
     private TextView mStatusView;
@@ -22,10 +19,10 @@ public class ActivityA extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_a);
-        mActivityName = getString(R.string.activity_a);
-        mStatusView = (TextView)findViewById(R.id.status_view_a);
-        mStatusAllView = (TextView)findViewById(R.id.status_view_all_a);
+        setContentView(R.layout.activity_b);
+        mActivityName = getString(R.string.activity_b);
+        mStatusView = (TextView)findViewById(R.id.status_view_b);
+        mStatusAllView = (TextView)findViewById(R.id.status_view_all_b);
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
         Utils.printStatus(mStatusView, mStatusAllView);
     }
@@ -72,22 +69,22 @@ public class ActivityA extends AppCompatActivity {
     }
 
     public void startDialog(View v) {
-        Intent intent = new Intent(ActivityA.this, DialogActivity.class);
+        Intent intent = new Intent(ActivityB.this, DialogActivity.class);
         startActivity(intent);
     }
 
-    public void startActivityB(View v) {
-       Intent intent = new Intent(ActivityA.this, ActivityB.class);
+    public void startActivityA(View v) {
+        Intent intent = new Intent(ActivityB.this, ActivityA.class);
         startActivity(intent);
     }
 
     public void startActivityC(View v) {
-//        Intent intent = new Intent(ActivityA.this, ActivityC.class);
-//        startActivity(intent);
+        Intent intent = new Intent(ActivityB.this, ActivityC.class);
+        startActivity(intent);
     }
 
-    public void finishActivityA(View v) {
-        ActivityA.this.finish();
-    }
+    public void finishActivityB(View v) {
 
+        ActivityB.this.finish();
+    }
 }

@@ -11,18 +11,22 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ActivityA"
-            android:theme="@style/AppTheme"
-            android:label="Principal">
+            android:label="Principal"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DialogActivity"
-            android:theme="@style/AppTheme"
-            android:label="@string/title_activity_dialog" />
+        <activity android:name=".ActivityB" />
+        <activity android:name=".ActivityC">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
